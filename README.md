@@ -22,10 +22,10 @@ We collected 3,654 question answer pairs as the ODSQA testing set and the speech
 To train machine comprehension models, we used iFLYTEK ASR system (https://www.xfyun.cn/doccenter/asr) to transcribe the collected data into ASR transcriptions.
 
 #  Artificially Generated Corpus
-To augment the training data, we conduct the following procedures to generate transcriptions of spoken version DRCD. First, we used iFLYTEK Text-to-Speech system (https://www.xfyun.cn/doccenter/tts) to generate the spoken version of the articles in DRCD. Then we utilized iFLYTEK ASR system to obtain the corresponding ASR transcriptions. In this corpus, we left the questions in the text form. 
+To augment the training data, we conduct the following procedures to generate transcriptions of spoken version DRCD. First, we used iFLYTEK Text-to-Speech system (https://www.xfyun.cn/doccenter/tts) to generate the spoken version of the articles in DRCD. Then we utilized iFLYTEK ASR system to obtain the corresponding ASR transcriptions. In this corpus, we left the questions in the text form. This artificially generated corpus is called DRCD-TTS.
 
 #  Back-translation Corpus
-To improve the robustness to speech recognition errors of QA model, we augmented DRCD training dataset with back-translation. We conduct the following procedures to generate an augmented training set. First, the DRCD training set is translated using Google Translation system into English. Then this set is translated back into Chinese through Google Translation system.
+To improve the robustness to speech recognition errors of QA model, we augmented DRCD training dataset with back-translation. We conduct the following procedures to generate an augmented training set. First, the DRCD training set is translated using Google Translation system into English. Then this set is translated back into Chinese through Google Translation system. This resulting dataset is called DRCD-backtrans.
 
 
 |Dataset| QA-pairs   | Hours      | M-spkrs  | F-spkrs  | WER-D(%)  | WER-Q(%)  | Avg D Len  | AvgQ Len  | 
