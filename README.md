@@ -34,3 +34,14 @@ To improve the robustness to speech recognition errors of QA model, we augmented
 |DRCD-TTS|16746|--|--|--|33.63|--|332|20|
 |DRCD-backtrans|15238|--|--|--|45.64|--|439|20|
 
+# Citation
+If you use the dataset in your work, please cite the following paper as:
+
+```
+@article{lee2018odsqa,
+  title={ODSQA: Open-domain Spoken Question Answering Dataset},
+  author={Lee, Chia-Hsuan and Wang, Shang-Ming and Chang, Huan-Cheng and Lee, Hung-Yi},
+  journal={arXiv preprint arXiv:1808.02280},
+  year={2018}
+}
+```
