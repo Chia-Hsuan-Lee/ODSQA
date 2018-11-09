@@ -21,6 +21,13 @@ We collected 3,654 question answer pairs as the ODSQA testing set and the speech
 
 To train machine comprehension models, we used iFLYTEK ASR system (https://www.xfyun.cn/doccenter/asr) to transcribe the collected data into ASR transcriptions.
 
+We provide two versions of ODSQA that are already transcribed by iFLYTEK ASR system
+In the first version, we keep the questions in text form as in DRCD (no ASR errors):
+ODSQA_textq_test-v1.1.json
+In the second version, we provide the more challenging one with spoken questions (hypothese that contain ASR errors):
+ODSQA_spokenq_test-v1.1.json
+
+
 #  Artificially Generated Corpus
 To augment the training data, we conduct the following procedures to generate transcriptions of spoken version DRCD. First, we used iFLYTEK Text-to-Speech system (https://www.xfyun.cn/doccenter/tts) to generate the spoken version of the articles in DRCD. Then we utilized iFLYTEK ASR system to obtain the corresponding ASR transcriptions. In this corpus, we left the questions in the text form. This artificially generated corpus is called DRCD-TTS.
 
