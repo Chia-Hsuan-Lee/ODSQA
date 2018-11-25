@@ -1,7 +1,7 @@
 
 # ODSQA: OPEN-DOMAIN SPOKEN QUESTION ANSWERING DATASET
 
-This repository contains dataset for the paper:
+This repository contains dataset for the IEEE SLT 2018 paper:
 > ODSQA: OPEN-DOMAIN SPOKEN QUESTION ANSWERING DATASET
 
 > Chia-Hsuan Lee, Shang-Ming Wang, Huan-Cheng Chang and Hung-Yi Lee
