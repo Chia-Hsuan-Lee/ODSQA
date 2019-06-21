@@ -31,6 +31,96 @@ In the second version, we provide the more challenging one with spoken questions
 
 **ODSQA_spokenq_test-v1.1.json**
 
+## Data format 資料格式
+
+- version : <String> 資料集版本
+- data : <Array>
+  - title : <String> : 文章標題
+  - id : <String> : 文章編號
+  - paragraphs : <Array>
+    - id : <String> : 文章編號_段落編號
+    - context : <String> : 段落內容
+    - qas : <Array>
+      - question : <String> : 問題內容
+      - id :<String> : 文章編號_段落編號_問題編號
+      - answers : <Arrays>
+        - answer_start : <int> text在文中位置
+        - id : <String> : "1"表示為人工標註的答案，"2"以上為人工答題的答案
+        - text : <string> : 答案內容
+
+
+## Example
+  
+  ```json
+{
+  "version": "1.3",
+  "data": [
+    {
+      "title": "德國總理",
+      "id": "6331",
+      "paragraphs": [
+        {
+          "context": "聯邦總理是德意志聯邦共和國的政府首腦。他只要聯邦部長，並圈定德國聯邦政府的政治方針。張力是由德國聯邦會議，根據聯邦總統的建議，未經辯論的選舉產生，再經聯邦總統任命，就可以正式成爲總理，而聯邦總統不能拒絕任命總理。總理，通常我一會再打妲己，執政黨的領袖，另外設有副總理，一直作爲副手。在神聖羅馬帝國時代，總理掌管的機構是重要機構之一。在普魯士和奧地利，19世紀的帝國結束之後，總理的職位又重新被引入。俾斯麥在北德意志邦聯是祈願聯邦總理，他在1871年德意志帝國建立後，讓帝國總理或者翻譯爲宰相。納粹德國時代，希特勒再次使用帝國總理的支撐，最後希特勒更元首的身份兼任帝國總理，成爲納粹德國的最高統治者。二戰之後的一支聯邦共和國成立，其政府首腦，簡稱聯邦總理，但是不僅德國聯邦政府的首腦被稱爲聯邦總理，奧地利政府的首腦也稱聯邦總理。另一方面，同樣在二戰成立的德意志民主共和國，也有設立總統一職，稱爲部長會議主席，不過這一職務的權利還得爲在德國統一社會黨總書記之下。",
+          "id": "6331-1",
+          "qas": [
+            {
+              "id": "6331-1-1",
+              "question": "誰負責指派聯邦部長?",
+              "answers": [
+                {
+                  "id": "1",
+                  "text": "聯邦總理",
+                  "answer_start": 0
+                },
+                {
+                  "id": "2",
+                  "text": "聯邦總理",
+                  "answer_start": 0
+                }
+              ]
+            },
+            {
+              "id": "6331-1-2",
+              "question": "聯邦總統能不能不任命聯邦總理?",
+              "answers": [
+                {
+                  "id": "1",
+                  "text": "不能",
+                  "answer_start": 97
+                },
+                {
+                  "id": "2",
+                  "text": "不能",
+                  "answer_start": 97
+                }
+              ]
+            },
+            {
+              "id": "6331-1-3",
+              "question": "德意志帝國與何年建立。",
+              "answers": [
+                {
+                  "id": "1",
+                  "text": "1871年",
+                  "answer_start": 219
+                },
+                {
+                  "id": "2",
+                  "text": "1871年",
+                  "answer_start": 219
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+  
+  ```
+
+
 
 #  Artificially Generated Corpus
 To augment the training data, we conduct the following procedures to generate transcriptions of spoken version DRCD. First, we used iFLYTEK Text-to-Speech system (https://www.xfyun.cn/doccenter/tts) to generate the spoken version of the articles in DRCD. Then we utilized iFLYTEK ASR system to obtain the corresponding ASR transcriptions. In this corpus, we left the questions in the text form. This artificially generated corpus is called DRCD-TTS.
@@ -49,10 +139,12 @@ To improve the robustness to speech recognition errors of QA model, we augmented
 If you use the dataset in your work, please cite the following paper as:
 
 ```
-@article{lee2018odsqa,
-  title={ODSQA: Open-domain Spoken Question Answering Dataset},
+@inproceedings{lee2018odsqa,
+  title={ODSQA: Open-Domain Spoken Question Answering Dataset},
   author={Lee, Chia-Hsuan and Wang, Shang-Ming and Chang, Huan-Cheng and Lee, Hung-Yi},
-  journal={arXiv preprint arXiv:1808.02280},
-  year={2018}
+  booktitle={2018 IEEE Spoken Language Technology Workshop (SLT)},
+  pages={949--956},
+  year={2018},
+  organization={IEEE}
 }
 ```
