@@ -33,20 +33,20 @@ In the second version, we provide the more challenging one with spoken questions
 
 ## Data format 資料格式
 
-- version : <String> 資料集版本
+- version : <String> (version of the dataset)
 - data : <Array>
-  - title : <String> : 文章標題
-  - id : <String> : 文章編號
+  - title : <String> (article title)
+  - id : <String> (article id)
   - paragraphs : <Array>
-    - id : <String> : 文章編號_段落編號
-    - context : <String> : 段落內容
+    - id : <String> (articleid_paragrpahid) 
+    - context : <String> (content of paragraph)
     - qas : <Array>
-      - question : <String> : 問題內容
-      - id :<String> : 文章編號_段落編號_問題編號
+      - question : <String> (content of quesiton)
+      - id :<String> (articleid_paragrpahid_questionid) 
       - answers : <Arrays>
-        - answer_start : <int> text在文中位置
-        - id : <String> : "1"表示為人工標註的答案，"2"以上為人工答題的答案
-        - text : <string> : 答案內容
+        - answer_start : <int> (the start index of answer span in paragrpah)
+        - id : <String> (answer id)
+        - text : <string> (answer content)
 
 
 ## Example
@@ -131,7 +131,7 @@ To improve the robustness to speech recognition errors of QA model, we augmented
 
 |Dataset| QA-pairs   | Hours      | M-spkrs  | F-spkrs  | WER-D(%)  | WER-Q(%)  | Avg D Len  | AvgQ Len  | 
 |:---------:|:---------: |:--------:| :--------:| :--------:|:--------:|:--------:|:--------:|:--------:|
-|ODSQA| 3654| 25.28|7|13|19.11|18.57|428|22|
+|ODSQA| 1,465 | 25.28|7|13|19.11|18.57|428|22|
 |DRCD-TTS|16746|--|--|--|33.63|--|332|20|
 |DRCD-backtrans|15238|--|--|--|45.64|--|439|20|
 
