@@ -1,5 +1,5 @@
 
-# ODSQA: OPEN-DOMAIN SPOKEN QUESTION ANSWERING DATASET
+# ODSQA: Open-Domain Spoken Question Answering Dataset
 
 This repository contains dataset for the IEEE SLT 2018 paper:
 > ODSQA: OPEN-DOMAIN SPOKEN QUESTION ANSWERING DATASET
