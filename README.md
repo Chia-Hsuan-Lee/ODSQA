@@ -1,19 +1,17 @@
 
 # ODSQA: Open-Domain Spoken Question Answering Dataset
 
-This repository contains dataset for the IEEE SLT 2018 paper:
-> ODSQA: OPEN-DOMAIN SPOKEN QUESTION ANSWERING DATASET
+This repository contains dataset for [ODSQA: Open-domain Spoken Question Answering Dataset](https://arxiv.org/abs/1808.02280). This is an Chinese dataset. A English dataset Spoken-SQuAD is also available [here](https://github.com/chiahsuan156/Spoken-SQuAD/blob/master/README.md).
 
-> Chia-Hsuan Lee, Shang-Ming Wang, Huan-Cheng Chang and Hung-Yi Lee
+[**Introduction**](#Introduction) | [**Corpus Description**](#Corpus-Description) | [**Data format**](#Data-format) | [**Audio Download Link**](http://speech.ee.ntu.edu.tw/~chiahsuan/ODSQA/audio_data.zip) | [**Example**](#Example) | [**Artificially Generated Corpus**](#Artificially-Generated-Corpus) | [**Back-translation Corpus**](#Back-translation-Corpus) | [**Citation**](#Citation-and-Contact)
 
-If you have any questions and suggestions, feel free to contact **chiahsuan.li@gmail.com**
 
-# Introduction
+## Introduction
 Text-based reading comprehension has been widely studied , on which machine is already comparable with human. On the other hand, accessing large collections of multimedia or spoken content is much more difficult and time-consuming than plain text content for humans. It’s therefore highly attractive to develop machines
 which can automatically understand spoken content. 
 One spoken question answering corpus is Spoken-SQuAD (https://github.com/chiahsuan156/Spoken-SQuAD/), which is generated from SQuAD dataset through Google Text-to-Speech (TTS) system. Although Spoken-SQuAD is large enough to train state-of-the-art QA models, it is artificially generated, so it is still one step away from real SQA. Therefore, we release an SQA dataset, ODSQA, with more than three thousand questions. ODSQA is a Chinese dataset, and  to the best of our knowledge, the largest real SQA dataset for extraction-based QA task. 
 
-# Corpus Description
+## Corpus Description
 In ODSQA, both the document and the question are in spoken form and the text-formed answer to each question is always a span in the document. Our reference texts are from Delta Reading Comprehension Dataset (DRCD)(https://arxiv.org/abs/1806.00920), which is an open domain traditional Chinese machine reading comprehension (MRC) dataset. 
 
 20 speakers were recruited to read the questions and paragraphs in the development set of DRCD. All the recruited speakers were native Chinese speakers and used Chinese as their primary language. For document, each sentence was shown to speaker respectively. The speaker was required to speak one sentence at a time. All the sentences of the same document were guaranteed to be spoken by the same speaker. The document and the question from the same data example do not have to be recorded by the same speakers.
@@ -31,7 +29,7 @@ In the second version, we provide the more challenging one with spoken questions
 
 **ODSQA_spokenq_test-v1.1.json**
 
-## Data format 資料格式
+## Data format 
 
 - version : <String> (version of the dataset)
 - data : <Array>
@@ -122,10 +120,10 @@ In the second version, we provide the more challenging one with spoken questions
 
 
 
-#  Artificially Generated Corpus
+##  Artificially Generated Corpus
 To augment the training data, we conduct the following procedures to generate transcriptions of spoken version DRCD. First, we used iFLYTEK Text-to-Speech system (https://www.xfyun.cn/doccenter/tts) to generate the spoken version of the articles in DRCD. Then we utilized iFLYTEK ASR system to obtain the corresponding ASR transcriptions. In this corpus, we left the questions in the text form. This artificially generated corpus is called DRCD-TTS.
 
-#  Back-translation Corpus
+##  Back-translation Corpus
 To improve the robustness to speech recognition errors of QA model, we augmented DRCD training dataset with back-translation. We conduct the following procedures to generate an augmented training set. First, the DRCD training set is translated using Google Translation system into English. Then this set is translated back into Chinese through Google Translation system. This resulting dataset is called DRCD-backtrans.
 
 
@@ -135,10 +133,10 @@ To improve the robustness to speech recognition errors of QA model, we augmented
 |DRCD-TTS|16746|--|--|--|33.63|--|332|20|
 |DRCD-backtrans|15238|--|--|--|45.64|--|439|20|
 
-# Citation
+## Citation and Contact
 If you use the dataset in your work, please cite the following paper as:
 
-```
+```bib
 @inproceedings{lee2018odsqa,
   title={ODSQA: Open-Domain Spoken Question Answering Dataset},
   author={Lee, Chia-Hsuan and Wang, Shang-Ming and Chang, Huan-Cheng and Lee, Hung-Yi},
@@ -148,3 +146,4 @@ If you use the dataset in your work, please cite the following paper as:
   organization={IEEE}
 }
 ```
+Please contact Chia-Hsuan Lee (chiahlee[at]uw.edu) for questions and suggestions.
